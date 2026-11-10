@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>中国最不无聊的网站</title>
+<style>
+  body {
+    margin: 16px;
+    background: #FFFFCC;
+    color: #000000;
+    font-family: "宋体", SimSun, serif;
+    font-size: 16px;
+  }
+  a { color: #0000FF; }
+  a:visited { color: #800080; }
+
+  .center { text-align: center; }
+  .title { margin: 0; color: red; font-size: 44px; font-weight: bold; }
+  .subtitle { margin: 4px 0; font-size: 24px; font-weight: bold; }
+  .small { font-size: 12px; color: #666666; }
+  .accent { color: #CC6600; font-size: 22px; font-weight: bold; }
+
+  .hr-red { width: 90%; margin: 8px auto; border: 0; border-top: 3px solid red; }
+  .hr-thin { width: 85%; margin: 14px auto; border: 0; border-top: 1px solid #999999; }
+  .hr-full { margin: 14px 0; border: 0; border-top: 1px solid #999999; }
+
+  table.dean { width: 90%; margin: 0 auto; border-collapse: collapse; border: 1px solid #CC9900; }
+  table.dean td { border: 1px solid #CC9900; padding: 10px; vertical-align: middle; }
+  table.dean .pic { width: 30%; text-align: center; }
+
+  .meme { width: 130px; cursor: pointer; margin: 0 6px; }
+</style>
+</head>
+
+<body>
+
+<div class="center">
+  <h1 class="title">华科最权威的传送地点</h1>
+</div>
+
+<table class="dean">
+  <tr>
+    <td class="pic">
+      <img src="img/bear-1.png" width="250" alt="熊大院长照片"><br>
+      <span class="small">我真的没笑你</span>
+    </td>
+    <td>
+      <p class="accent" style="color: red; font-size: 22px;">当你打开时就输的一塌糊涂，可是我不笑你，因为你好笑的在后面</p>
+      <p class="small"></p>
+    </td>
+  </tr>
+</table>
+
+<div class="center">
+  <hr class="hr-thin">
+  <p class="accent"></p>
+
+  <hr class="hr-thin">
+  <p class="accent">成功浪费你7秒</p>
+
+  <hr class="hr-thin">
+  <img class="meme" src="img/bear-1.png" alt="熊大笑表情包" onclick="alert('我去，好好笑')">
+  <img class="meme" src="img/bear-2.png" alt="熊二冷笑表情包" onclick="alert('哈哈哈啊哈')">
+  <img class="meme" src="img/bear-3.png" alt="熊大震惊表情包" onclick="alert('你哈哈哈啊哈')"><br>
+  <p class="small">点击图片吧</p>
+
+  <hr class="hr-thin">
+  <p class="accent">虚假的网址</p>
+  <p>
+    <a href="https://www.hust.edu.cn/" target="_blank" rel="noopener">华中科技大学</a> |
+    <a href="https://cs.hust.edu.cn/" target="_blank" rel="noopener">计算机学院</a>
+  </p>
+</div>
+
+<hr class="hr-full">
+
+<div class="center">
+  <p class="small">
+    你是第 <b id="count">1</b> 位访客 · 当前在线 <b id="online">66</b> 只熊<br>
+  </p>
+</div>
+
+<script>
+  var n = parseInt(localStorage.getItem("bearvisits") || "7", 10) + 1;
+  localStorage.setItem("bearvisits", n);
+  document.getElementById("count").innerHTML = n;
+  document.getElementById("online").innerHTML = 60 + Math.floor(Math.random() * 30);
+</script>
+
+</body>
+</html>
